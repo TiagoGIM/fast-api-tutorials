@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  api:
+    container_name: api-generic
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - ./app/:/code/app
+    restart: on-failure
